@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<h2>@ViewBag.Message</h2>
+<p>
+    @Html.ActionLink("List Workstations", "Index", "Workstation")<br/>
+    @Html.ActionLink("Register New Workstation", "Create", "Workstation")
+</p>
+<p>
+    @Html.ActionLink("List Servers", "Index", "Server")<br/>
+    @Html.ActionLink("Register New Server", "Create", "Server")
+</p>

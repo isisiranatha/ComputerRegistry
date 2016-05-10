@@ -1,0 +1,53 @@
+﻿@model ComputerRegistry.Models.PersonalComputer
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>PersonalComputer</legend>
+
+    <div class="display-label">InternalID</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.InternalID)
+    </div>
+
+    <div class="display-label">DNSName</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DNSName)
+    </div>
+
+    <div class="display-label">Make</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Make.Description)
+    </div>
+
+    <div class="display-label">Model</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Model)
+    </div>
+
+    <div class="display-label">PrimaryUser</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PrimaryUser)
+    </div>
+
+    <div class="display-label">PurchasedOn</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PurchasedOn)
+    </div>
+
+    <div class="display-label">Retire</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Retire)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

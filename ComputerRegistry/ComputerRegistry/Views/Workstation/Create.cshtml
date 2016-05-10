@@ -1,0 +1,81 @@
+﻿@model ComputerRegistry.Models.Workstation
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create Workstation</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Workstation</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PrimaryUser)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PrimaryUser)
+            @Html.ValidationMessageFor(model => model.PrimaryUser)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.InternalID)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.InternalID)
+            @Html.ValidationMessageFor(model => model.InternalID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DNSName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DNSName)
+            @Html.ValidationMessageFor(model => model.DNSName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.MakeID, "Make")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("MakeID", String.Empty)
+            @Html.ValidationMessageFor(model => model.MakeID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Model)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Model)
+            @Html.ValidationMessageFor(model => model.Model)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PurchasedOn)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PurchasedOn)
+            @Html.ValidationMessageFor(model => model.PurchasedOn)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Retire)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Retire)
+            @Html.ValidationMessageFor(model => model.Retire)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

@@ -1,0 +1,7 @@
+﻿@using (Html.BeginForm()) 
+{ 
+    <p> 
+        Find by model: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string) &nbsp;
+        Find by make: @Html.DropDownList("MakeID", String.Empty) &nbsp; 
+        <input type="submit" value="Search" /></p> 
+} 

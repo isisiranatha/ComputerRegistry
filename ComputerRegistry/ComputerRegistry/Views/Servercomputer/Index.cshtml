@@ -1,0 +1,58 @@
+﻿@model IEnumerable<ComputerRegistry.Models.ServerComputer>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Servers</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@Html.Partial("../Shared/_Search")
+<table>
+    <tr>
+        <th></th>
+        <th>Internal Identifier</th>
+        <th>DNS Name</th>
+        <th>Make</th>
+        <th>Model</th>
+        <th>Location</th>
+        <th>Purchased On</th>
+        <th>Retire</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ServerComputerID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ServerComputerID }) |
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.InternalID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DNSName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Make.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Model)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Location)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PurchasedOn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Retire)
+        </td>
+    </tr>
+}
+
+</table>
+<p>
+    @ViewBag.Message 
+</p>

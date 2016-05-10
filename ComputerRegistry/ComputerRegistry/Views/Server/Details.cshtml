@@ -1,0 +1,50 @@
+﻿@model ComputerRegistry.Models.Server
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Server</legend>
+
+    <div class="display-label">Location</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Location)
+    </div>
+
+    <div class="display-label">InternalID</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.InternalID)
+    </div>
+
+    <div class="display-label">DNSName</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DNSName)
+    </div>
+
+    <div class="display-label">Make</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Make.Description)
+    </div>
+
+    <div class="display-label">Model</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Model)
+    </div>
+
+    <div class="display-label">PurchasedOn</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PurchasedOn)
+    </div>
+
+    <div class="display-label">Retire</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Retire)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ComputerID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
